@@ -8,18 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Responsabile {
-
+public class Direttore {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	@Column
 	private String nome;
 	@ManyToOne
-	private Centro centro;
-	
-	public Responsabile(String nome) {
+	private Azienda azienda;
+
+	public Direttore(String nome) {
 		this.nome = nome;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getNome() {
@@ -30,17 +33,13 @@ public class Responsabile {
 		this.nome = nome;
 	}
 
-	public Centro getCentro() {
-		return centro;
+	public Azienda getAzienda() {
+		return azienda;
 	}
 
-	public void setCentro(Centro centro) {
-		this.centro = centro;
+	public void setAzienda(Azienda azienda) {
+		this.azienda = azienda;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
+	
 	
 }
