@@ -1,6 +1,5 @@
 package it.uniroma3.model;
 
-import java.sql.Time;
 import java.util.Date;
 import java.util.Map;
 
