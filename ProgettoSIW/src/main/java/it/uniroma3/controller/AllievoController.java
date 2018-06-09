@@ -32,13 +32,13 @@ public class AllievoController {
 	}
 	//getAllievo
 	@RequestMapping(value = "/allievo/{id}", method = RequestMethod.GET)
-    public String getCustomer(@PathVariable("id") Long id, Model model) {
+    public String getAllievo(@PathVariable("id") Long id, Model model) {
         model.addAttribute("allievo", this.allievoService.findById(id));
     	return "showAllievo";
     }
 	//addAllievo
 	@RequestMapping("/addAllievo")
-    public String addCustomer(Model model) {
+    public String addAllievo(Model model) {
         model.addAttribute("allievo", new Allievo());
         return "allievoForm";
     }

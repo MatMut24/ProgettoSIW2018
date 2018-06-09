@@ -69,7 +69,12 @@ public class Attivita {
 	public void setAllievi(Map<String, Allievo> allievi) {
 		this.allievi = allievi;
 	}
-	
-	
-	
+
+	public Centro getCentro() {
+		return centro;
+	}
+
+	public void setCentro(Centro centro) {
+		this.centro = centro;
+	}
 }
