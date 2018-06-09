@@ -14,6 +14,8 @@ public class AllievoValidator implements Validator{
     public void validate(Object o, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "required");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "surname", "required");
+   		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "telefono", "required");		
     }
 
 	@Override
