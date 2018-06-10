@@ -11,4 +11,6 @@ public interface AllievoRepository extends CrudRepository<Allievo,Long>{
 	public List<Allievo> findByNomeAndCognome(String nome, String cognome);
 	
 	public List<Allievo> findByNomeAndCognomeAndDataNascita(String nome, String cognome, Date dataNascita);
+
+	public List<Allievo> findByNome(String nome);
 }

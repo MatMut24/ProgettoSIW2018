@@ -22,6 +22,10 @@ public class AllievoService {
 		return this.allievoRepository.save(allievo);
 	}
 	
+	public List<Allievo> findByNome(String nome) {
+		return  this.allievoRepository.findByNome(nome);
+	}
+	
 	public Allievo findByNomeAndCognome(String nome, String cognome) {
 		return (Allievo) this.allievoRepository.findByNomeAndCognome(nome, cognome);
 	}

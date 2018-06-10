@@ -20,7 +20,7 @@ public class Centro {
 	private String nome;
 	
 	@Column
-	private String Indirizzo;
+	private String indirizzo;
 	
 	@Column
 	private String email;
@@ -40,7 +40,7 @@ public class Centro {
 
 	public Centro(String nome, String indirizzo, String email, String telefono, int allieviMax) {
 		this.nome = nome;
-		Indirizzo = indirizzo;
+		this.indirizzo = indirizzo;
 		this.email = email;
 		this.telefono = telefono;
 		this.allieviMax = allieviMax;
@@ -59,11 +59,11 @@ public class Centro {
 	}
 
 	public String getIndirizzo() {
-		return Indirizzo;
+		return indirizzo;
 	}
 
 	public void setIndirizzo(String indirizzo) {
-		Indirizzo = indirizzo;
+		this.indirizzo = indirizzo;
 	}
 
 	public String getEmail() {

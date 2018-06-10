@@ -1,6 +1,6 @@
 package it.uniroma3.model;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 public class Allievo {
@@ -32,7 +35,7 @@ public class Allievo {
 	private String telefono;
 	
 	@Column
-	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(iso=ISO.DATE)
 	private Date dataNascita;
 	
 	@Column

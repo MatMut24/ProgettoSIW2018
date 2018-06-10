@@ -1,0 +1,77 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta charset="UTF-8">
+		<title>AcmeCorp</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<link th:href="@{/css/skel.css}" rel="stylesheet"  />
+		<link th:href="@{/css/style.css}" rel="stylesheet" />
+		<link th:href="@{/css/style-xlarge.css}" rel="stylesheet"/>
+	</head>
+<body>
+	<!-- Header -->
+	<header id="header">
+		<h1>
+			Inserisci nuovo allievo
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li><a th:href="@{/index}">Homepage</a></li>
+				 <li><a th:href="@{/gestione}">Gestione Allievo</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<div>
+		<p th:text="${exists}"></p>
+	</div>
+	<form th:action="@{/allievo}" method="POST" th:object="${allievo}">
+		<table>
+			<tr style="background-color: transparent;">
+				<td><h3>Nome</h3></td>
+				<td><input type="text" th:field="*{nome}" /></td>
+				<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
+			</tr>
+			<tr style="background-color: transparent;">
+				<td><h3>Cognome</h3></td>
+				<td><input type="text" th:field="*{cognome}" /></td>
+				<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></td>
+			</tr>
+			<tr style="background-color: transparent">
+				<td><h3>Data di nascita</h3></td>
+				<td><input type="date" th:field="*{dataNascita}" /></td>
+				<td th:if="${#fields.hasErrors('dataNascita')}"
+					th:errors="*{dataNascita}"></td>
+			</tr>
+			<tr style="background-color: transparent">
+				<td><h3>Lugo di nascita</h3></td>
+				<td><input type="text" th:field="*{luogoNascita}" /></td>
+				<td th:if="${#fields.hasErrors('luogoNascita')}"
+					th:errors="*{luogoNascita}"></td>
+			</tr>
+			<tr style="background-color: transparent">
+				<td><h3>Email</h3></td>
+				<td><input type="email" th:field="*{email}" /></td>
+				<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+			</tr>
+			<tr style="background-color: transparent">
+				<td><h3>Telefono</h3></td>
+				<td><input type="tel" th:field="*{telefono}" /></td>
+				<td th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></td>
+			</tr>
+			<tr style="background-color: transparent">
+				<td><input type="submit" name="invia i dati" class="button fit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -24,6 +24,12 @@ public class AllievoController {
 	@Autowired
 	private AllievoValidator validator;
 	
+	//gestioneAllievo
+	@RequestMapping("/gestione")
+	public String gestioneAllievo(Model model) {
+		return "gestioneAllievo";
+	}
+	
 	//Allievi
 	@RequestMapping("/allievi")
 	public String allievi(Model model) {
@@ -45,7 +51,7 @@ public class AllievoController {
 	//nuovoAllievo
 	@RequestMapping(value = "/allievo", method = RequestMethod.POST)
     public String newAllievo(@Valid @ModelAttribute("allievo") Allievo allievo, 
-    									Model model, BindingResult bindingResult) {
+    									BindingResult bindingResult, Model model) {
         this.validator.validate(allievo, bindingResult);
         
         if (this.allievoService.alreadyExists(allievo)) {
@@ -56,7 +62,7 @@ public class AllievoController {
             if (!bindingResult.hasErrors()) {
                 this.allievoService.save(allievo);
                 model.addAttribute("allievi", this.allievoService.findAll());
-                return "allieviList";
+                return "allievoList";
             }
         }
         return "allievoForm";
