@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
-<title>Gestione Allievi</title>
+<title>Centri</title>
 <head>
 <meta charset="UTF-8">
 <title>AcmeCorp</title>
@@ -18,7 +18,6 @@
 <link th:href="@{/css/style.css}" rel="stylesheet" />
 <link th:href="@{/css/style-xlarge.css}" rel="stylesheet" />
 </head>
-
 <body>
 
 	<!-- Header -->
@@ -27,31 +26,41 @@
 		<div id="header" class="container">
 
 			<div id="logo">
-				<h1>Gestione Allievo</h1>
+				<h1>
+					Gestione Azienda
+				</h1>
 			</div>
 			<nav id="nav">
 				<ul>
-					<li><a th:href="@{index}">Homepage</a></li>
+					<li><a th:href="@{/index}">Homepage</a></li>
+					<li><a th:href="@{/gestioneAzienda}">Gestione Azienda</a></li>
 				</ul>
 			</nav>
 
 		</div>
 
 	</div>
+	<!-- Header Ends Here -->
+
+	<!-- Page -->
+
 	<div id="page">
 		<div class="container">
 			<div class="row">
 
 				<div id="content" class="12u skel-cell-important">
 					<article>
+						<header>
+							<h2 class="main-title">Lista centri</h2>
+						</header>
 						<table>
-							<p>
-								<a th:href="@{/addAllievo}"><h4>Inserisci un nuovo
-										allievo</h4>
-							</p>
-							<p>
-								<a th:href="@{/allievi}"><h4>Lista di tutti gli allievi</h4></a>
-							</p>
+							<tr>
+								<th>Nome</th>
+							</tr>
+							<tr th:each="centro : ${centri}">
+								<td><a th:href="@{'/centro' + '/' + ${centro.id}}"><span
+										th:text="${centro.nome}"></span></a></td>
+							</tr>
 						</table>
 					</article>
 				</div>

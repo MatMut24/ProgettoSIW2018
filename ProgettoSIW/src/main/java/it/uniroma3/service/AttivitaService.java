@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.model.Attivita;
+import it.uniroma3.model.Centro;
 import it.uniroma3.repository.AttivitaRepository;
 
 
@@ -32,6 +33,11 @@ public class AttivitaService {
 			return attivita.get();
 		else
 			return null;
+	}
+	
+	public List<Attivita> findByCentro(Centro centro) {
+		List<Attivita> listaAttivita = this.attivitaRepository.findByCentro(centro);
+		return listaAttivita;
 	}
 
 	public boolean alreadyExists(Attivita attivita) {

@@ -25,7 +25,7 @@ public class AllievoController {
 	private AllievoValidator validator;
 	
 	//gestioneAllievo
-	@RequestMapping("/gestione")
+	@RequestMapping("/gestioneAllievo")
 	public String gestioneAllievo(Model model) {
 		return "gestioneAllievo";
 	}

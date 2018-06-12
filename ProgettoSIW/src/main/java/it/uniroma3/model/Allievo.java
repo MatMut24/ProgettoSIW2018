@@ -55,6 +55,7 @@ public class Allievo {
 		this.telefono = telefono;
 		this.dataNascita = dataNascita;
 		this.luogoNascita = luogoNascita;
+		this.attivita = null;
 	}
 
 	public Long getId() {
@@ -116,6 +117,4 @@ public class Allievo {
 	public void setAttivita(List<Attivita> attivita) {
 		this.attivita = attivita;
 	}
-	
-	
 }

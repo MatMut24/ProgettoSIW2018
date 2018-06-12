@@ -1,5 +1,6 @@
 package it.uniroma3.model;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -32,7 +33,7 @@ public class Centro {
 	private int allieviMax;
 	
 	@OneToMany(mappedBy="centro")
-	private Map<String,Attivita> attivita;
+	private List<Attivita> attivita;
 	
 	public Centro() {
 
@@ -90,11 +91,11 @@ public class Centro {
 		this.allieviMax = allieviMax;
 	}
 
-	public Map<String, Attivita> getAttivita() {
+	public List<Attivita> getAttivita() {
 		return attivita;
 	}
 
-	public void setAttivita(Map<String, Attivita> attivita) {
+	public void setAttivita(List<Attivita> attivita) {
 		this.attivita = attivita;
 	}
 	

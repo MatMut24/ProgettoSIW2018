@@ -12,4 +12,6 @@ public interface AttivitaRepository extends CrudRepository<Attivita, Long> {
 	public List<Attivita> findByNome(String nome);
 	
 	public List<Attivita> findByNomeAndCentro(String nome, Centro centro);
+
+	public List<Attivita> findByCentro(Centro centro);
 }
