@@ -26,14 +26,12 @@
 		<div id="header" class="container">
 
 			<div id="logo">
-				<h1>
-					Gestione Allievo
-				</h1>
+				<h1>Gestione Attivita Centro</h1>
 			</div>
 			<nav id="nav">
 				<ul>
 					<li><a th:href="@{/index}">Homepage</a></li>
-					<li><a th:href="@{/gestioneAllievo}">Gestione Allievo</a></li>
+					<li><a th:href="@{/gestioneAzienda}">Gestione Azienda</a></li>
 				</ul>
 			</nav>
 
@@ -51,15 +49,15 @@
 				<div id="content" class="12u skel-cell-important">
 					<article>
 						<header>
-							<h2 class="main-title">Lista allievi</h2>
+							<h2 class="main-title">Lista Attivita Centro</h2>
 						</header>
 						<table>
 							<tr>
-								<th>Nome</th>
+								<th>Attivita:</th>
 							</tr>
-							<tr th:each="allievo : ${allievi}">
-								<td><a th:href="@{'/allievo' + '/' + ${allievo.id}}"><span
-										th:text="${allievo.nome}"></span> <span th:text="${allievo.cognome}"></span></a></td>
+							<tr th:each="attivita : ${attivita}">
+								<td><a th:href="@{'/attivita' + '/' + ${attivita.id}}"><span
+										th:text="${attivita.nome}"></span></a></td>
 							</tr>
 						</table>
 					</article>
@@ -78,3 +76,4 @@
 	</div>
 </body>
 </html>
+

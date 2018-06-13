@@ -19,16 +19,7 @@
 		<div>
 			<span th:text="${centro.telefono}"></span>
 		</div>
-
-		<table>
-			<tr>
-				<th>Attivita:</th>
-			</tr>
-			<tr th:each="attivita : ${attivita}">
-				<td><a th:href="@{'/attivita' + '/' + ${centro}}"><span
-						th:text="${attivita.nome}"></span></a></td>
-			</tr>
-		</table>
+		<div><a th:href="@{'/centro' + '/' + ${centro.id} + '/attivita/'}"><h4>Attività </h4></a></div>
 	</div>
 </body>
 </html>

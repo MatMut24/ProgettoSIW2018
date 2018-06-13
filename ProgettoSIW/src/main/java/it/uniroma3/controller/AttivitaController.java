@@ -31,26 +31,14 @@ public class AttivitaController {
 		model.addAttribute("attivita", attivitaService.findAll());
 		return "attivitaList";
 	}
-	
-	//getAttivitaCentro
-		@RequestMapping(value = "/attivita/{id}", method = RequestMethod.GET)
-		public String getAttivitaCentro(@PathVariable("id") Long id, Model model) {
-			model.addAttribute("attivita", this.attivitaService.findById(id));
-			return "showAttivitaCentro";
-		}
-	
-	//getAttivita
-	@RequestMapping(value = "/attivita/{id}", method = RequestMethod.GET)
-	public String getAttivita(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("attivita", this.attivitaService.findById(id));
-		return "showAttivita";
-	}
+
 	//addAttivita
 	@RequestMapping("/addAttivita")
 	public String addAttivita(Model model) {
 		model.addAttribute("attivita", new Attivita());
 		return "attivitaForm";
 	}
+
 	//nuovaAttivita
 	@RequestMapping(value = "/attivita", method = RequestMethod.POST)
 	public String newAttivita(@Valid @ModelAttribute("attivita") Attivita attivita, 

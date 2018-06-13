@@ -39,12 +39,13 @@ public class Centro {
 
 	}
 
-	public Centro(String nome, String indirizzo, String email, String telefono, int allieviMax) {
+	public Centro(String nome, String indirizzo, String email, String telefono, int allieviMax, List<Attivita> attivita) {
 		this.nome = nome;
 		this.indirizzo = indirizzo;
 		this.email = email;
 		this.telefono = telefono;
 		this.allieviMax = allieviMax;
+		this.attivita = attivita;
 	}
 	
 	public Long getId() {

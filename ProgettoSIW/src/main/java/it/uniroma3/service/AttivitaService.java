@@ -46,5 +46,5 @@ public class AttivitaService {
 			return true;
 		else 
 			return false;
-	}	
+	}
 }

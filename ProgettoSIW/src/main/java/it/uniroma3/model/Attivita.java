@@ -37,9 +37,10 @@ public class Attivita {
 		
 	}
 
-	public Attivita(String nome, Date data) {
+	public Attivita(String nome, Date data, Centro centro) {
 		this.nome = nome;
 		this.data = data;
+		this.centro = centro;
 	}
 
 	public Long getId() {
