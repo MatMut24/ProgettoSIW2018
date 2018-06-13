@@ -39,6 +39,13 @@ public class AttivitaController {
 		return "attivitaForm";
 	}
 
+	//showAttivita
+	@RequestMapping(value = "*/attivita/{id}", method = RequestMethod.GET)
+	public String getAllievo(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("attivita", this.attivitaService.findById(id));
+		return "showAttivita";
+	}
+
 	//nuovaAttivita
 	@RequestMapping(value = "/attivita", method = RequestMethod.POST)
 	public String newAttivita(@Valid @ModelAttribute("attivita") Attivita attivita, 
