@@ -1,25 +1,71 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
-<head>
-<title>Centro</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>AcmeCorp</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<link th:href="@{/css/skel.css}" rel="stylesheet"  />
+		<link th:href="@{/css/style.css}" rel="stylesheet" />
+		<link th:href="@{/css/style-xlarge.css}" rel="stylesheet"/>
+	</head>
+<title>Centro </title>
 </head>
 <body>
-	<div>
-		<h4>Centro</h4>
-		<div>
-			<span th:text="${centro.nome}"></span>
+<!-- Header -->
+	<header id="header">
+		<h1>
+			Gestione Centro
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li><a th:href="@{/index}">Homepage</a></li>
+				 <li><a th:href="@{/gestioneAzienda}">Gestione Azienda</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div id="page">
+		<div class="container">
+			<div class="row">
+
+				<div id="content" class="12u skel-cell-important">
+					<article>
+						<header>
+							<h2 class="main-title"><span th:text="${centro.nome}"></span></h2>
+						</header>
+						<table>
+							<tr>
+								<th>Nome: &nbsp&nbsp&nbsp&nbsp&nbsp <span th:text="${centro.nome}"></span></th>
+							</tr>
+							<tr>
+								<th>Indirizzo: &nbsp&nbsp&nbsp&nbsp&nbsp <span th:text="${centro.indirizzo}"></span></th>
+							</tr>
+							<tr>
+								<th>Email: &nbsp&nbsp&nbsp&nbsp&nbsp <span th:text="${centro.email}"></span></th>
+							</tr>
+							<tr>
+								<th>Telefono: &nbsp&nbsp&nbsp&nbsp&nbsp <span th:text="${centro.telefono}"></span></th>
+							</tr>
+							<tr>
+								<th>Attività: &nbsp&nbsp&nbsp&nbsp&nbsp
+									<span>
+										<a style="color: blue" th:href="@{'/centro' + '/' + ${centro.id} + '/attivita/'}">vedi le attività del <span th:text="${centro.nome}"></a>
+									</span>
+								</th>
+							</tr>
+						</table>
+					</article>
+				</div>
+			</div>
 		</div>
-		<div>
-			<span th:text="${centro.indirizzo}"></span>
-		</div>
-		<div>
-			<span th:text="${centro.email}"></span>
-		</div>
-		<div>
-			<span th:text="${centro.telefono}"></span>
-		</div>
-		<div><a th:href="@{'/centro' + '/' + ${centro.id} + '/attivita/'}"><h4>Attività </h4></a></div>
 	</div>
 </body>
 </html>

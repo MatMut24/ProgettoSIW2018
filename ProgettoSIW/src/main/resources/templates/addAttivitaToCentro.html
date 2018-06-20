@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta charset="UTF-8">
+		<title>AcmeCorp</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<link th:href="@{/css/skel.css}" rel="stylesheet"  />
+		<link th:href="@{/css/style.css}" rel="stylesheet" />
+		<link th:href="@{/css/style-xlarge.css}" rel="stylesheet"/>
+	</head>
+<body>
+	<!-- Header -->
+	<header id="header">
+		<h1>
+			Inserisci nuova attività
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li><a th:href="@{/index}">Homepage</a></li>
+				 <li><a th:href="@{/gestioneCentro}">Gestione Centro</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	
+
+</body>
+</html>

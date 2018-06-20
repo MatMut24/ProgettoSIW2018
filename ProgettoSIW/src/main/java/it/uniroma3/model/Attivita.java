@@ -24,7 +24,7 @@ public class Attivita {
 	private String nome;
 	
 	@Column
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date data;
 
 	@ManyToMany(mappedBy="attivita")

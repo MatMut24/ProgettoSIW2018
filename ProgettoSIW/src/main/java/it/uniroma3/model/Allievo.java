@@ -35,7 +35,7 @@ public class Allievo {
 	private String telefono;
 	
 	@Column
-	@DateTimeFormat(iso=ISO.DATE)
+	@Temporal(TemporalType.DATE)
 	private Date dataNascita;
 	
 	@Column

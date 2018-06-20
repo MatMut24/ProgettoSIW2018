@@ -13,9 +13,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import it.uniroma3.model.Allievo;
 import it.uniroma3.model.Attivita;
 import it.uniroma3.model.Centro;
+import it.uniroma3.model.Direttore;
 import it.uniroma3.service.AllievoService;
 import it.uniroma3.service.AttivitaService;
 import it.uniroma3.service.CentroService;
+import it.uniroma3.service.DirettoreService;
 
 
 @SpringBootApplication
@@ -33,6 +35,9 @@ public class ProgettoSiwApplication {
 	
 	@Autowired
 	private AttivitaService attivitaService;
+	
+	@Autowired
+	private DirettoreService direttoreService;
 	
 	@PostConstruct
 	public void init() {
@@ -78,5 +83,9 @@ public class ProgettoSiwApplication {
 		centroService.save(c5);
 		Centro c6 = new Centro("Centro Sei", "Via oceano6", "dsa@gmail.com", "234567", 100);
 		centroService.save(c6);*/
+		
+		//direttore
+		Direttore d1 = new Direttore("mattia", "matmut", "mattia");
+		direttoreService.save(d1);
 	}
 }
