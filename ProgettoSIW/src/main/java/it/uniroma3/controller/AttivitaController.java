@@ -40,8 +40,8 @@ public class AttivitaController {
 	}
 
 	//showAttivita
-	@RequestMapping(value = "*/attivita/{id}", method = RequestMethod.GET)
-	public String getAllievo(@PathVariable("id") Long id, Model model) {
+	@RequestMapping(value = "/attivita/{id}", method = RequestMethod.GET)
+	public String getAttivita(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("attivita", this.attivitaService.findById(id));
 		return "showAttivita";
 	}

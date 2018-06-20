@@ -48,14 +48,14 @@ public class Allievo {
 		
 	}
 
-	public Allievo(String nome, String cognome, String email, String telefono, Date dataNascita, String luogoNascita) {
+	public Allievo(String nome, String cognome, String email, String telefono, Date dataNascita, String luogoNascita, List<Attivita> attivita) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.email = email;
 		this.telefono = telefono;
 		this.dataNascita = dataNascita;
 		this.luogoNascita = luogoNascita;
-		this.attivita = null;
+		this.attivita = attivita;
 	}
 
 	public Long getId() {

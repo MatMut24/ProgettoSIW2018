@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.model.Allievo;
+import it.uniroma3.model.Attivita;
 import it.uniroma3.repository.AllievoRepository;
 
 @Transactional
@@ -52,5 +53,10 @@ public class AllievoService {
 			return true;
 		else
 			return false;
+	}
+
+	public List<Allievo> findByAttivita(Attivita attivita) {
+		List<Allievo> listaAllievi = this.allievoRepository.findByAttivita(attivita);
+		return listaAllievi;
 	}
 }
