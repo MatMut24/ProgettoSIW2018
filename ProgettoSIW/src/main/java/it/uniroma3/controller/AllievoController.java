@@ -30,18 +30,6 @@ public class AllievoController {
 		return "gestioneAllievo";
 	}
 	
-	//Allievi
-	@RequestMapping("/allievi")
-	public String allievi(Model model) {
-		model.addAttribute("allievi", allievoService.findAll());
-		return "allievoList";
-	}
-	//getAllievo
-	@RequestMapping(value = "/allievo/{id}", method = RequestMethod.GET)
-    public String getAllievo(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("allievo", this.allievoService.findById(id));
-    	return "showAllievo";
-    }
 	//addAllievo
 	@RequestMapping("/addAllievo")
     public String addAllievo(Model model) {
