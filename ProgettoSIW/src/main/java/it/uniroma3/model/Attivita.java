@@ -1,6 +1,7 @@
 package it.uniroma3.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -31,7 +32,7 @@ public class Attivita {
 	private Date data;
 
 	@ManyToMany(mappedBy="attivita")
-	private Map<String,Allievo> allievi;
+	private List<Allievo> allievi;
 	
 	@ManyToOne
 	private Centro centro;
@@ -40,10 +41,11 @@ public class Attivita {
 		
 	}
 
-	public Attivita(String nome, Date data, Centro centro) {
+	public Attivita(String nome, Date data, Centro centro, List<Allievo> allievi) {
 		this.nome = nome;
 		this.data = data;
 		this.centro = centro;
+		this.allievi = allievi;
 	}
 
 	public Long getId() {
@@ -66,11 +68,11 @@ public class Attivita {
 		this.data = data;
 	}
 
-	public Map<String, Allievo> getAllievi() {
+	public List<Allievo> getAllievi() {
 		return allievi;
 	}
 
-	public void setAllievi(Map<String, Allievo> allievi) {
+	public void setAllievi(List<Allievo> allievi) {
 		this.allievi = allievi;
 	}
 

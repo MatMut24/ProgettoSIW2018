@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
-<title>Allievi</title>
+<title>Attivita Centro</title>
 <head>
 <meta charset="UTF-8">
 <title>AcmeCorp</title>
@@ -56,7 +56,7 @@
 								<th>Attivita:</th>
 							</tr>
 							<tr th:each="attivita : ${attivita}">
-								<td><a th:href="@{'/attivita' + '/' + ${attivita.id}}"><span
+								<td><a th:href="@{'/centro' + '/' + ${centro.id} + '/attivita' + '/' + ${attivita.id}}"><span
 										th:text="${attivita.nome}"></span></a></td>
 							</tr>
 						</table>
