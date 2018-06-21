@@ -28,6 +28,7 @@
 			<ul>
 				<li><a th:href="@{/index}">Homepage</a></li>
 				 <li><a th:href="@{/gestioneCentro}">Gestione Centro</a></li>
+				 <li><a th:href="@{/gestioneAzienda}">Gestione Azienda</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -50,6 +51,8 @@
 									<span th:text="${attivita.nome}"></span>
 									<span> &nbsp&nbsp&nbsp&nbsp&nbsp </span>
 									<span th:text="${attivita.data}"></span>
+									<span> &nbsp&nbsp&nbsp&nbsp&nbsp </span>
+									<span th:text="${attivita.centro.nome}"></span>
 								</td>
 							</tr>
 						</table>

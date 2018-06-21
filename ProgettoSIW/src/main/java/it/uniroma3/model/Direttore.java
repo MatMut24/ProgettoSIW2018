@@ -17,7 +17,7 @@ public class Direttore {
 	@ManyToOne
 	private Azienda azienda;
 
-	public Direttore(String nome) {
+	public Direttore(String nome, String username, String password) {
 		this.nome = nome;
 	}
 
@@ -40,6 +40,5 @@ public class Direttore {
 	public void setAzienda(Azienda azienda) {
 		this.azienda = azienda;
 	}
-	
 	
 }

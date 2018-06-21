@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Attivita {
 
@@ -21,10 +23,11 @@ public class Attivita {
 	private Long id;
 	
 	@Column(nullable=false)
-	private String nome;
+	public String nome;
 	
 	@Column
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date data;
 
 	@ManyToMany(mappedBy="attivita")

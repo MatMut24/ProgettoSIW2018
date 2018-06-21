@@ -40,13 +40,6 @@ public class CentroController {
 		return "scegliCentro";
 	}
 	
-	//centroScelto
-	@RequestMapping(value = "/centroScelto/{id}", method = RequestMethod.GET)
-	public String getCentroScelto(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("centro", this.centroService.findById(id));
-		return "addAttivitaToCentro";
-	}
-	
 	//getCentro
 	@RequestMapping(value = "/centro/{id}", method = RequestMethod.GET)
 	public String getCentro(@PathVariable("id") Long id, Model model) {

@@ -36,6 +36,7 @@ public class Allievo {
 	
 	@Column
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataNascita;
 	
 	@Column
