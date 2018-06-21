@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
-<title>Gestione Centri</title>
+<title>Allievi</title>
 <head>
 <meta charset="UTF-8">
 <title>AcmeCorp</title>
@@ -19,6 +19,7 @@
 <link th:href="@{/css/style-xlarge.css}" rel="stylesheet" />
 </head>
 <body>
+
 	<!-- Header -->
 	<div id="header-wrapper">
 
@@ -26,30 +27,54 @@
 
 			<div id="logo">
 				<h1>
-					Gestione Centri
+					Gestione Centro
 				</h1>
 			</div>
 			<nav id="nav">
 				<ul>
-					<li><a th:href="@{index}">Homepage</a></li>
+					<li><a th:href="@{/index}">Homepage</a></li>
+					<li><a th:href="@{/gestioneCentro}">Gestione Centro</a></li>
 				</ul>
 			</nav>
 
 		</div>
+
 	</div>
+	<!-- Header Ends Here -->
+
+	<!-- Page -->
+
 	<div id="page">
 		<div class="container">
 			<div class="row">
+
 				<div id="content" class="12u skel-cell-important">
 					<article>
+						<header>
+							<h2 class="main-title">Lista allievi</h2>
+						</header>
 						<table>
-								<p><a th:href="@{/addAllievoAttivita}"><h4>Iscrivi un allievo ad un'attività</h4></a></p>
-								<p><a th:href="@{/scegliCentro}"><h4>Aggiungi una attività al tuo centro </h4></a></p>
+							<tr>
+								<th>Nome</th>
+							</tr>
+							<tr th:each="allievo : ${allievi}">
+								<td><a th:href="@{'/attivita' + '/' + ${attivita.id} + '/scegliAllievo' + '/' + ${allievo.id}}"><span
+										th:text="${allievo.nome}"></span> <span th:text="${allievo.cognome}"></span></a></td>
+							</tr>
 						</table>
 					</article>
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<!-- /Page -->
+
+	<!-- Copyright -->
+	<div id="copyright" class="container">
+		Design: <a href="http://templated.co">TEMPLATED</a> Images: <a
+			href="http://unsplash.com">Unsplash</a> (<a
+			href="http://unsplash.com/cc0">CC0</a>)
 	</div>
 </body>
 </html>

@@ -117,4 +117,48 @@ public class AziendaController {
 	        model.addAttribute("allievo", this.allievoService.findById(id));
 	    	return "showAttivitaAllievo";
 	    }
+		
+	//addAllievoAttivita
+	@RequestMapping("/addAllievoAttivita")
+	public String addAllievoAttivita(Model model) {
+		model.addAttribute("centri", centroService.findAll());
+		return "centroAttivita";
+	}
+	
+	@RequestMapping(value = "/scegliCentro/{id}")
+	public String ScegliCentroPartecipazione(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("centro", centroService.findById(id));
+		Centro centro = centroService.findById(id);
+		model.addAttribute("attivita", centro.getAttivita());
+		return "scegliAttivita";
+	}
+	
+	@RequestMapping(value = "**/attivita/{id}/scegliAllievo", method = RequestMethod.GET)
+	public String getAllieviCentro(@PathVariable("id") Long id, Model model) {	
+		Attivita attivita = this.attivitaService.findById(id);
+		Centro centro = attivita.getCentro();
+		model.addAttribute("centro", centro);
+		model.addAttribute("attivita", attivita);
+		model.addAttribute("allievi", allievoService.findAll());
+		return "partecipantiAttivitaCentroList";
+	}
+	
+	@RequestMapping(value = "/attivita/{id1}/scegliAllievo/{id2}", method = RequestMethod.GET)
+	public String partecipazione(@PathVariable("id1") Long id1, @PathVariable("id2") Long id2, Model model) {
+		Attivita attivita = this.attivitaService.findById(id1);
+		model.addAttribute("attivita", attivita);
+		Allievo allievo = allievoService.findById(id2);		
+		
+		if (attivita.getAllievi().contains(allievo)) {
+			model.addAttribute("exists", "Allievo gia iscritto");
+			return "partecipantiAttivitaCentroList";
+		}
+		else {
+			attivita.getAllievi().add(allievo);
+			allievo.getAttivita().add(attivita);
+			model.addAttribute("attivita", attivita);
+			model.addAttribute("allievi", attivita.getAllievi());
+			return "showAttivitaCentro";
+		}
+	}
 }

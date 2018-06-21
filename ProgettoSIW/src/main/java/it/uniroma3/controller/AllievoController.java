@@ -2,6 +2,7 @@ package it.uniroma3.controller;
 
 import javax.validation.Valid;
 
+import org.junit.runners.Parameterized.Parameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +42,12 @@ public class AllievoController {
 		 model.addAttribute("allievi", this.allievoService.findAll());
          return "allievoList";
     }
+	
+	@RequestMapping(value = "/allievo/{id}")
+	public String showAllievo(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("allievo", this.allievoService.findById(id));
+		return "showAllievo";
+	}
 	//nuovoAllievo
 	@RequestMapping(value = "/allievo", method = RequestMethod.POST)
     public String newAllievo(@Valid @ModelAttribute("allievo") Allievo allievo, 
